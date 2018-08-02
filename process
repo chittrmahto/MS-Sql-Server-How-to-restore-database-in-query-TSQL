@@ -1,0 +1,17 @@
+RESTORE DATABASE [NewDBName]
+    FROM DISK = N'D:\dfolderBack\OldDBName_backup.bak'
+    WITH FILE = 1,
+    MOVE N'OldDBName' TO N'D:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\DATA\NewDBName.mdf',
+    MOVE N'OldDBName_log' TO N'D:\Program Files\Microsoft SQL Server\MSSQL13.MSSQLSERVER\MSSQL\DATA\NewDBName_log.ldf',
+    STATS = 1;
+
+---------------------output--------------------------------------
+
+1 percent processed.
+2 percent processed.
+.............
+99 percent processed.
+100 percent processed.
+Processed 31348576 pages for database 'NewDBName', file 'OldDBName' on file 1.
+Processed 7 pages for database 'NewDBName', file 'OldDBName_log' on file 1.
+RESTORE DATABASE successfully processed 31348583 pages in 5404.629 seconds (45.315 MB/sec).
